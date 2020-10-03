@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">StartFromScratch</string>
+    <string name="solution_1">Solution 1</string>
+    <string name="solution_2">Solution 2</string>
+    <string name="solution_3">Solution 3</string>
+    <string name="solution_4">Solution 4</string>
+    <string name="solution_5">Solution 5</string>
+    <string name="exercise_1">Exercise 1</string>
+    <string name="exercise_2">Exercise 2</string>
+    <string name="exercise_3">Exercise 3</string>
+    <string name="exercise_4">Exercise 4</string>
+    <string name="exercise_5">Exercise 5</string>
+</resources>

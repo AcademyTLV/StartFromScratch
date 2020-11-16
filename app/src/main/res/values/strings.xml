@@ -10,4 +10,8 @@
     <string name="exercise_3">Exercise 3</string>
     <string name="exercise_4">Exercise 4</string>
     <string name="exercise_5">Exercise 5</string>
+    <string name="overview_title">overview</string>
+    <string name="release_date">Release Date:</string>
+    <string name="rating">Rating:</string>
+    <string name="error">Something went wrong :\</string>
 </resources>

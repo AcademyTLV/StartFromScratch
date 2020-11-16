@@ -1,2 +1,4 @@
 include ':app'
+include ':db'
+include ':network'
 rootProject.name = "StartFromScratch"

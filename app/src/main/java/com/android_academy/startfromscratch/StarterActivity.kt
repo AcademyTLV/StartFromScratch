@@ -4,12 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android_academy.startfromscratch.solution_1.MovieActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.android_academy.startfromscratch.solution_5.movies.MainActivity
+import kotlinx.android.synthetic.main.activity_start.*
 
 class StarterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_start)
 
         solution_button1.setOnClickListener {
             startSolution1()
@@ -77,7 +78,7 @@ class StarterActivity : AppCompatActivity() {
     }
 
     private fun startSolution5() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     private fun startSolution4() {

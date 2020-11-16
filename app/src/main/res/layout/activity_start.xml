@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".StarterActivity">
+
+    <Button
+        android:id="@+id/solution_button1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/solution_1"
+
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/solution_button2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/solution_button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/solution_2"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/solution_button3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/solution_button1" />
+
+    <Button
+        android:id="@+id/solution_button3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/solution_3"
+        app:layout_constraintBottom_toTopOf="@+id/solution_button4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/solution_button2" />
+
+    <Button
+        android:id="@+id/solution_button4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/solution_4"
+        app:layout_constraintBottom_toTopOf="@+id/solution_button5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/solution_button3" />
+
+    <Button
+        android:id="@+id/solution_button5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/solution_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/solution_button4" />
+
+    <Button
+        android:id="@+id/exercise_button_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/exercise_1"
+        app:layout_constraintBottom_toTopOf="@+id/exercise_button_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/solution_button1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/exercise_button_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/exercise_2"
+        app:layout_constraintBottom_toTopOf="@+id/exercise_button_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/solution_button2"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_button_1" />
+
+    <Button
+        android:id="@+id/exercise_button_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/exercise_3"
+        app:layout_constraintBottom_toTopOf="@+id/exercise_button_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/solution_button3"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_button_2" />
+
+    <Button
+        android:id="@+id/exercise_button_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/exercise_4"
+        app:layout_constraintBottom_toTopOf="@+id/exercise_button_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/solution_button4"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_button_3" />
+
+    <Button
+        android:id="@+id/exercise_button_5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/exercise_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/solution_button5"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_button_4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

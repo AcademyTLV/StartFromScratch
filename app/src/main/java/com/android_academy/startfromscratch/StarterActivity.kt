@@ -78,11 +78,11 @@ class StarterActivity : AppCompatActivity() {
     }
 
     private fun startSolution5() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, com.android_academy.startfromscratch.solution_5.movies.MainActivity::class.java))
     }
 
     private fun startSolution4() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.solution_4.MainActivity::class.java))
     }
 
     private fun startSolution3() {

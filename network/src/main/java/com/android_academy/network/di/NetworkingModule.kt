@@ -20,7 +20,7 @@ val networkingModule = module {
             .build()
     }
 
-    single<Gson> {
+    single {
         Gson()
     }
 

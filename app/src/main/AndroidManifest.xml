@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".solution_5.movies.MainActivity"/>
+        <activity android:name=".solution_4.MainActivity"/>
     </application>
 
 </manifest>

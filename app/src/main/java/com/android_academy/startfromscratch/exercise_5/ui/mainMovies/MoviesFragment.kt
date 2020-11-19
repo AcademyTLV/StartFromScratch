@@ -16,6 +16,7 @@ import com.android_academy.startfromscratch.exercise_5.ui.details.DetailsFragmen
 
 import kotlinx.android.synthetic.main.movies_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MoviesFragment : Fragment(), OnMovieClickListener {
@@ -25,7 +26,7 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
     }
 
     private lateinit var moviesAdapter: MoviesViewAdapter
-    private val moviesViewModel: MoviesViewModel by sharedViewModel<MoviesViewModelImpl>()
+    private val moviesViewModel: MoviesViewModel by viewModel<MoviesViewModelImpl>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

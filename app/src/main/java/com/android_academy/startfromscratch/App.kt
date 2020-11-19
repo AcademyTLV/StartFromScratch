@@ -2,12 +2,12 @@ package com.android_academy.startfromscratch
 
 import android.app.Application
 import android.content.Context
+import com.android_academy.startfromscratch.exercise_5.di.exercise5modulesList
 import com.android_academy.startfromscratch.solution_5.di.modulesList
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-val exercise5ModuleList = com.android_academy.startfromscratch.exercise_5.di.modulesList
 
 class MoviesApp : Application() {
     init {
@@ -23,7 +23,8 @@ class MoviesApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MoviesApp)
-            koin.loadModules(modulesList + exercise5ModuleList)
+            //TODO Add to loadModules exercise5modulesList from di package in exercise_5
+            koin.loadModules(modulesList)
             koin.createRootScope()
         }
     }

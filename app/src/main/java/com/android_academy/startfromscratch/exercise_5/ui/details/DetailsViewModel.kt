@@ -4,6 +4,8 @@ import androidx.lifecycle.*
 import com.android_academy.db.Movie
 import com.android_academy.startfromscratch.exercise_5.repository.MoviesRepository
 import kotlinx.coroutines.launch
+import org.koin.android.logger.AndroidLogger
+import org.koin.core.logger.Logger
 
 interface DetailsViewModel {
     fun observeMovieDetails(lifecycle: Lifecycle, observer: (Movie) -> Unit)

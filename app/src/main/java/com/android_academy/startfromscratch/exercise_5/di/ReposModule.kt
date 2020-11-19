@@ -11,7 +11,8 @@ import org.koin.dsl.module
 
 val reposModule = module {
 
-    single<MoviesRepository> {
+    //TODO change it to single since we want our repo to be a singleton
+    factory<MoviesRepository> {
         MoviesRepositoryImpl(
             dbProvider = get(),
             networkProvider = get()

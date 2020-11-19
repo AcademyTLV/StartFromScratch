@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".solution_1.MovieActivity"/>
         <activity android:name=".StarterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +24,7 @@
         <activity android:name=".solution_4.MainActivity"/>
         <activity android:name=".solution_3.MainActivity"/>
         <activity android:name=".solution_2.MainActivity"/>
+        <activity android:name=".solution_1.MainActivity"/>
     </application>
 
 </manifest>

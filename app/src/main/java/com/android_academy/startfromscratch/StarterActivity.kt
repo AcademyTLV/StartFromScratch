@@ -94,6 +94,6 @@ class StarterActivity : AppCompatActivity() {
     }
 
     private fun startSolution1() {
-        startActivity(Intent(this, MovieActivity::class.java))
+        startActivity(Intent(this, com.android_academy.startfromscratch.solution_1.MainActivity::class.java))
     }
 }

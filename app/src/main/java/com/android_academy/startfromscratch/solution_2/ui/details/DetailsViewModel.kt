@@ -1,10 +1,10 @@
-package com.android_academy.startfromscratch.solution_3.ui.details
+package com.android_academy.startfromscratch.solution_2.ui.details
 
 import androidx.lifecycle.*
 import com.android_academy.db.Movie
+import com.android_academy.startfromscratch.solution_2.repository.MoviesRepository
+import com.android_academy.startfromscratch.solution_2.ui.mainMovies.MoviesViewModelImpl
 import com.android_academy.startfromscratch.solution_3.di.DependencyInjection
-import com.android_academy.startfromscratch.solution_3.repository.MoviesRepository
-import com.android_academy.startfromscratch.solution_3.ui.mainMovies.MoviesViewModelImpl
 import kotlinx.coroutines.launch
 
 interface DetailsViewModel {
@@ -34,6 +34,7 @@ class DetailsViewModelImpl(private val moviesRepository: MoviesRepository) : Vie
             }
         }
     }
+
 }
 
 class DetailsViewModelFactory(private val moviesRepository: MoviesRepository) : ViewModelProvider.Factory {

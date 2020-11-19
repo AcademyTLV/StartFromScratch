@@ -90,7 +90,7 @@ class StarterActivity : AppCompatActivity() {
     }
 
     private fun startSolution2() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.solution_2.MainActivity::class.java))
     }
 
     private fun startSolution1() {

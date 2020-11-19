@@ -56,7 +56,13 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
             }
             val convertNetworkMovieToModel = MovieModelConverter.convertNetworkMovieToModel(movies)
             setState(State.LOADED)
-            moviesAdapter.setData(convertNetworkMovieToModel)
+            updateData(convertNetworkMovieToModel)
+        }
+    }
+
+    private fun updateData(movies: List<Movie>) {
+        view?.post {
+            moviesAdapter.setData(movies)
         }
     }
 

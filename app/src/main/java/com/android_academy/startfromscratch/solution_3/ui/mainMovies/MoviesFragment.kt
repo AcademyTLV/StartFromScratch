@@ -1,4 +1,4 @@
-package com.android_academy.startfromscratch.solution_5.ui.mainMovies
+package com.android_academy.startfromscratch.solution_3.ui.mainMovies
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,13 +9,14 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android_academy.db.Movie
 import com.android_academy.startfromscratch.R
-import com.android_academy.startfromscratch.solution_5.ui.details.DetailsFragment
+import com.android_academy.startfromscratch.solution_4.di.DependencyInjection
+import com.android_academy.startfromscratch.solution_4.ui.details.DetailsFragment
 
 import kotlinx.android.synthetic.main.movies_fragment.*
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class MoviesFragment : Fragment(), OnMovieClickListener {
@@ -25,12 +26,15 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
     }
 
     private lateinit var moviesAdapter: MoviesViewAdapter
-    private val moviesViewModel: MoviesViewModel by sharedViewModel<MoviesViewModelImpl>()
+    val factory = MoviesViewModelFactory(DependencyInjection.moviesRepo)
+    lateinit var moviesViewModel: MoviesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val factory = MoviesViewModelFactory(DependencyInjection.moviesRepo)
+        moviesViewModel = ViewModelProvider(this, factory).get(MoviesViewModelImpl::class.java)
         return inflater.inflate(R.layout.movies_fragment, container, false)
     }
 

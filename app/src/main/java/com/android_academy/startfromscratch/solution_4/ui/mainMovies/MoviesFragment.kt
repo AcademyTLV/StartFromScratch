@@ -51,7 +51,7 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
     }
 
     private fun observesData() {
-        moviesViewModel.getMovies().observeForever{
+        moviesViewModel.observeMovies(lifecycle ){
             moviesAdapter.setData(it)
         }
     }

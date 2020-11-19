@@ -86,7 +86,7 @@ class StarterActivity : AppCompatActivity() {
     }
 
     private fun startSolution3() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.solution_3.MainActivity::class.java))
     }
 
     private fun startSolution2() {

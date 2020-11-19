@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".solution_5.MainActivity"/>
         <activity android:name=".solution_4.MainActivity"/>
+        <activity android:name=".solution_3.MainActivity"/>
     </application>
 
 </manifest>

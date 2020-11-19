@@ -1,10 +1,7 @@
 package com.android_academy.startfromscratch.solution_5.ui.mainMovies
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.android_academy.db.Movie
-import androidx.lifecycle.viewModelScope
 import com.android_academy.startfromscratch.solution_5.repository.MoviesRepository
 import kotlinx.coroutines.launch
 
@@ -13,7 +10,7 @@ enum class State { LOADING, LOADED, ERROR }
 interface MoviesViewModel {
     val likedMoviesLiveData: LiveData<List<Movie>>
     fun getState(): LiveData<State>
-    fun getMovies(): LiveData<List<Movie>>
+    fun observeMovies(lifecycle: Lifecycle,observer : (List<Movie>) -> Unit)
 }
 
 
@@ -23,8 +20,6 @@ class MoviesViewModelImpl(val moviesRepository: MoviesRepository) : MoviesViewMo
 
     override val likedMoviesLiveData: LiveData<List<Movie>>
         get() = _likedMovies
-
-    override fun getMovies(): LiveData<List<Movie>> = movies
 
 
     // State
@@ -38,6 +33,12 @@ class MoviesViewModelImpl(val moviesRepository: MoviesRepository) : MoviesViewMo
         MutableLiveData<List<Movie>>().also {
             state.postValue(State.LOADING)
             loadMovies()
+        }
+    }
+
+    override fun observeMovies(lifecycle: Lifecycle, observer: (List<Movie>) -> Unit) {
+        movies.observe({lifecycle}) {
+            observer(it)
         }
     }
 

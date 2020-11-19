@@ -1,4 +1,4 @@
-package com.android_academy.startfromscratch.solution_4.ui.mainMovies
+package com.android_academy.startfromscratch.solution_3.ui.mainMovies
 
 import androidx.lifecycle.*
 import com.android_academy.db.Movie
@@ -29,6 +29,7 @@ class MoviesViewModelImpl(val moviesRepository: MoviesRepository) : MoviesViewMo
 
     override val likedMoviesLiveData: LiveData<List<Movie>>
         get() = _likedMovies
+
 
     // State
     private val state: MutableLiveData<State> by lazy { MutableLiveData<State>() }

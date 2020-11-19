@@ -27,7 +27,6 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
     }
 
     private lateinit var moviesAdapter: MoviesViewAdapter
-    lateinit var moviesViewModel: MoviesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -88,3 +87,5 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
             .addToBackStack("main").commit()
     }
 }
+
+enum class State { LOADING, LOADED, ERROR }

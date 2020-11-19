@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.android_academy.db.Movie
-import com.android_academy.db.MovieModelConverter
 import com.android_academy.startfromscratch.R
+import com.android_academy.startfromscratch.exercise_1.db.Movie
+import com.android_academy.startfromscratch.exercise_1.db.MovieModelConverter
 import com.android_academy.startfromscratch.exercise_1.di.DependencyInjection
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.details_fragment.*

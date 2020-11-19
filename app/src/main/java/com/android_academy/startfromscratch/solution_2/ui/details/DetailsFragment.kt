@@ -34,7 +34,7 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val factory = DetailsViewModelFactory(DependencyInjection.moviesRepo)
+        val factory = DetailsViewModelFactory(DependencyInjection.networkProvider)
         viewModel = ViewModelProvider(this, factory).get(DetailsViewModelImpl::class.java)
         return inflater.inflate(R.layout.details_fragment, container, false)
     }

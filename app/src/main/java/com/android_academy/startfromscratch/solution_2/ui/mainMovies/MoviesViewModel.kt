@@ -2,8 +2,9 @@ package com.android_academy.startfromscratch.solution_2.ui.mainMovies
 
 import androidx.lifecycle.*
 import com.android_academy.db.Movie
+import com.android_academy.db.MovieModelConverter
 import com.android_academy.startfromscratch.solution_2.di.DependencyInjection
-import com.android_academy.startfromscratch.solution_2.repository.MoviesRepository
+import com.android_academy.startfromscratch.solution_2.providers.MovieNetworkProvider
 
 enum class State { LOADING, LOADED, ERROR }
 
@@ -13,17 +14,17 @@ interface MoviesViewModel {
     fun observeMovies(lifecycle: Lifecycle,observer : (List<Movie>) -> Unit)
 }
 
-class MoviesViewModelFactory(private val moviesRepository: MoviesRepository) : ViewModelProvider.Factory {
+class MoviesViewModelFactory(private val moviesNetworkProvider: MovieNetworkProvider) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MoviesViewModelImpl::class.java)) {
-            return MoviesViewModelImpl(moviesRepository) as T
+            return MoviesViewModelImpl(moviesNetworkProvider) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
 
 
-class MoviesViewModelImpl(val moviesRepository: MoviesRepository) : MoviesViewModel, ViewModel() {
+class MoviesViewModelImpl(private val moviesNetworkProvider: MovieNetworkProvider) : MoviesViewModel, ViewModel() {
 
     private val executors = DependencyInjection.viewModelExecutor
 
@@ -55,16 +56,18 @@ class MoviesViewModelImpl(val moviesRepository: MoviesRepository) : MoviesViewMo
 
     private fun loadMovies() {
         executors.execute {
-            moviesRepository.getMovies {
-                if (it == null) {
+            val moviesListResult = moviesNetworkProvider.getMovies()
+                if (moviesListResult == null) {
                     state.postValue(State.ERROR)
+                    return@execute
                 }
 
-                if (it?.isNotEmpty() == true) {
+                if (moviesListResult.results.isNotEmpty()) {
                     state.postValue(State.LOADED)
                 }
-                movies.postValue(it)
-            }
+            val convertNetworkMovieToModel =
+                MovieModelConverter.convertNetworkMovieToModel(moviesListResult)
+            movies.postValue(convertNetworkMovieToModel)
         }
     }
 }

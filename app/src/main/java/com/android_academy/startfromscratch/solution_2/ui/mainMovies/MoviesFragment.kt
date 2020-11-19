@@ -32,7 +32,7 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val factory = MoviesViewModelFactory(DependencyInjection.moviesRepo)
+        val factory = MoviesViewModelFactory(DependencyInjection.networkProvider)
         moviesViewModel = ViewModelProvider(this, factory).get(MoviesViewModelImpl::class.java)
         return inflater.inflate(R.layout.movies_fragment, container, false)
     }

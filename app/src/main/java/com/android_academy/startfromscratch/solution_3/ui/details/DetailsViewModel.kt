@@ -2,8 +2,8 @@ package com.android_academy.startfromscratch.solution_3.ui.details
 
 import androidx.lifecycle.*
 import com.android_academy.db.Movie
-import com.android_academy.startfromscratch.solution_4.repository.MoviesRepository
-import com.android_academy.startfromscratch.solution_4.ui.mainMovies.MoviesViewModelImpl
+import com.android_academy.startfromscratch.solution_3.repository.MoviesRepository
+import com.android_academy.startfromscratch.solution_3.ui.mainMovies.MoviesViewModelImpl
 import kotlinx.coroutines.launch
 
 interface DetailsViewModel {

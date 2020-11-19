@@ -50,7 +50,7 @@ class MoviesViewAdapter(private val movieClickListener: OnMovieClickListener) :
         }
 
         fun bind(movie: Movie) {
-            if (movie.imageUrl?.isNotEmpty()) {
+            if (movie.imageUrl.isNotEmpty()) {
                 Picasso.get()
                     .load(movie.imageUrl)
                     .into(ivImage)

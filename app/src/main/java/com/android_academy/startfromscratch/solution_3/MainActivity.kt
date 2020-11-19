@@ -3,7 +3,7 @@ package com.android_academy.startfromscratch.solution_3
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android_academy.startfromscratch.R
-import com.android_academy.startfromscratch.solution_4.ui.mainMovies.MoviesFragment
+import com.android_academy.startfromscratch.solution_3.ui.mainMovies.MoviesFragment
 
 
 class MainActivity : AppCompatActivity() {

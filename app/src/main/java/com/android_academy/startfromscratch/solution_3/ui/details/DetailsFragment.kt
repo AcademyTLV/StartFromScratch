@@ -8,12 +8,11 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.android_academy.db.Movie
 import com.android_academy.startfromscratch.R
-import com.android_academy.startfromscratch.solution_4.di.DependencyInjection
-import com.android_academy.startfromscratch.solution_4.ui.mainMovies.MoviesViewModelFactory
-import com.android_academy.startfromscratch.solution_4.ui.mainMovies.MoviesViewModelImpl
+import com.android_academy.startfromscratch.solution_3.di.DependencyInjection
+import com.android_academy.startfromscratch.solution_3.ui.mainMovies.MoviesViewModelFactory
+import com.android_academy.startfromscratch.solution_3.ui.mainMovies.MoviesViewModelImpl
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.details_fragment.*
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class DetailsFragment : Fragment() {
 

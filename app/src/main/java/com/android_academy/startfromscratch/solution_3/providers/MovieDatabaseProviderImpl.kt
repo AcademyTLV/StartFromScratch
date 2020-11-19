@@ -2,28 +2,26 @@ package com.android_academy.startfromscratch.solution_3.providers
 
 import com.android_academy.db.MovieDao
 import com.android_academy.db.Movie
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.withContext
+import com.android_academy.db.di.MockMovieDao
 
 interface MovieDatabaseProvider {
 
-    fun getAll(): Flow<List<Movie>?>
-    suspend fun getMovie(movieId : Int): Movie?
-    suspend fun insertAll(movies: List<Movie>)
+    fun getAll(): List<Movie>?
+    fun getMovie(movieId : Int): Movie?
+    fun insertAll(movies: List<Movie>)
 }
 
-class MovieDatabaseProviderImpl(private val dao: MovieDao) : MovieDatabaseProvider {
+class MovieDatabaseProviderImpl(private val dao: MockMovieDao) : MovieDatabaseProvider {
 
-    override fun getAll(): Flow<List<Movie>?> {
+    override fun getAll(): List<Movie>? {
         return dao.getAll()
     }
 
-    override suspend fun getMovie(movieId: Int): Movie? = withContext(Dispatchers.IO) {
-        return@withContext dao.getMovie(movieId)
+    override fun getMovie(movieId: Int): Movie? {
+        return dao.getMovie(movieId)
     }
 
-    override suspend fun insertAll(movies: List<Movie>) = withContext(Dispatchers.IO) {
+    override fun insertAll(movies: List<Movie>) {
         dao.insertAll(movies)
     }
 }

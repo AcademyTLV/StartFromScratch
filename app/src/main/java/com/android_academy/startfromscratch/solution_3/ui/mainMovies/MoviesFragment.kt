@@ -13,8 +13,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android_academy.db.Movie
 import com.android_academy.startfromscratch.R
-import com.android_academy.startfromscratch.solution_4.di.DependencyInjection
-import com.android_academy.startfromscratch.solution_4.ui.details.DetailsFragment
+import com.android_academy.startfromscratch.solution_3.di.DependencyInjection
+import com.android_academy.startfromscratch.solution_3.ui.details.DetailsFragment
 
 import kotlinx.android.synthetic.main.movies_fragment.*
 
@@ -26,7 +26,6 @@ class MoviesFragment : Fragment(), OnMovieClickListener {
     }
 
     private lateinit var moviesAdapter: MoviesViewAdapter
-    val factory = MoviesViewModelFactory(DependencyInjection.moviesRepo)
     lateinit var moviesViewModel: MoviesViewModel
 
     override fun onCreateView(

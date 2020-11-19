@@ -58,23 +58,23 @@ class StarterActivity : AppCompatActivity() {
     }
 
     private fun startExercise5() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.exercise_5.MainActivity::class.java))
     }
 
     private fun startExercise4() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.exercise_4.MainActivity::class.java))
     }
 
     private fun startExercise3() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.exercise_3.MainActivity::class.java))
     }
 
     private fun startExercise2() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.exercise_2.MainActivity::class.java))
     }
 
     private fun startExercise1() {
-        TODO("Not yet implemented")
+        startActivity(Intent(this, com.android_academy.startfromscratch.exercise_1.MainActivity::class.java))
     }
 
     private fun startSolution5() {

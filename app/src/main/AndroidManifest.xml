@@ -20,11 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".solution_5.MainActivity"/>
-        <activity android:name=".solution_4.MainActivity"/>
-        <activity android:name=".solution_3.MainActivity"/>
-        <activity android:name=".solution_2.MainActivity"/>
-        <activity android:name=".solution_1.MainActivity"/>
+        <activity android:name=".solution_5.MainActivity" />
+        <activity android:name=".solution_4.MainActivity" />
+        <activity android:name=".solution_3.MainActivity" />
+        <activity android:name=".solution_2.MainActivity" />
+        <activity android:name=".solution_1.MainActivity" />
+        <activity android:name=".exercise_1.MainActivity" />
+        <activity android:name=".exercise_2.MainActivity" />
+        <activity android:name=".exercise_3.MainActivity" />
+        <activity android:name=".exercise_4.MainActivity" />
+        <activity android:name=".exercise_5.MainActivity" />
     </application>
 
 </manifest>

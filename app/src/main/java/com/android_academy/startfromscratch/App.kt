@@ -7,6 +7,8 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
+val exercise5ModuleList = com.android_academy.startfromscratch.exercise_5.di.modulesList
+
 class MoviesApp : Application() {
     init {
         instance = this
@@ -21,7 +23,7 @@ class MoviesApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MoviesApp)
-            koin.loadModules(modulesList)
+            koin.loadModules(modulesList + exercise5ModuleList)
             koin.createRootScope()
         }
     }
@@ -29,7 +31,7 @@ class MoviesApp : Application() {
     companion object {
         private var instance: MoviesApp? = null
 
-        fun applicationContext() : Context {
+        fun applicationContext(): Context {
             return instance!!.applicationContext
         }
     }

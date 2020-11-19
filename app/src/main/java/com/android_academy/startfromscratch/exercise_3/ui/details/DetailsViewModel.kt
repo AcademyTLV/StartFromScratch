@@ -27,11 +27,10 @@ class DetailsViewModelImpl(private val moviesRepository: MoviesRepository) : Vie
 
     override fun loadMovie(movieId: Int) {
         executors.execute {
-            moviesRepository.getMovie(movieId) { movie ->
-                movie?.let {
-                    movieLiveData.postValue(it)
-                }
-            }
+            //TODO Call for getMovie(movieId) on Repository
+            //TODO Update live data on new received movie
+            //notice that now our data will come from DB and not from network.
+            //since our livedata story movie it will cached for next call (e.g. after activity recreation)
         }
     }
 }

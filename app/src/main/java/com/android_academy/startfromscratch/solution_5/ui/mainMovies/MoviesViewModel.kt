@@ -1,11 +1,11 @@
-package com.android_academy.startfromscratch.solution_5.movies.ui.mainMovies
+package com.android_academy.startfromscratch.solution_5.ui.mainMovies
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.android_academy.db.Movie
 import androidx.lifecycle.viewModelScope
-import com.android_academy.startfromscratch.solution_5.movies.repository.MoviesRepository
+import com.android_academy.startfromscratch.solution_5.repository.MoviesRepository
 import kotlinx.coroutines.launch
 
 enum class State { LOADING, LOADED, ERROR }

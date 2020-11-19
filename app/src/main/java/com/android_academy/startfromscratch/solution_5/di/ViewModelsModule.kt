@@ -1,9 +1,9 @@
 
-package com.android_academy.startfromscratch.solution_5.movies.di
+package com.android_academy.startfromscratch.solution_5.di
 
 import android.util.Log
-import com.android_academy.startfromscratch.solution_5.movies.ui.details.DetailsViewModelImpl
-import com.android_academy.startfromscratch.solution_5.movies.ui.mainMovies.MoviesViewModelImpl
+import com.android_academy.startfromscratch.solution_5.ui.details.DetailsViewModelImpl
+import com.android_academy.startfromscratch.solution_5.ui.mainMovies.MoviesViewModelImpl
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

@@ -1,4 +1,4 @@
-package com.android_academy.startfromscratch.solution_5.movies.ui.mainMovies
+package com.android_academy.startfromscratch.solution_5.ui.mainMovies
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android_academy.db.Movie
 import com.android_academy.startfromscratch.R
-import com.android_academy.startfromscratch.solution_5.movies.ui.details.DetailsFragment
+import com.android_academy.startfromscratch.solution_5.ui.details.DetailsFragment
 
 import kotlinx.android.synthetic.main.movies_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

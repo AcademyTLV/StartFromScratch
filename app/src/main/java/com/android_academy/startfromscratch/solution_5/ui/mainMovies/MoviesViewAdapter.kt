@@ -1,4 +1,4 @@
-package com.android_academy.startfromscratch.solution_5.movies.ui.mainMovies
+package com.android_academy.startfromscratch.solution_5.ui.mainMovies
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,9 +1,9 @@
-package com.android_academy.startfromscratch.solution_5.movies
+package com.android_academy.startfromscratch.solution_5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android_academy.startfromscratch.R
-import com.android_academy.startfromscratch.solution_5.movies.ui.mainMovies.MoviesFragment
+import com.android_academy.startfromscratch.solution_5.ui.mainMovies.MoviesFragment
 
 
 class MainActivity : AppCompatActivity() {

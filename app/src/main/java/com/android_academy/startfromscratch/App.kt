@@ -2,7 +2,7 @@ package com.android_academy.startfromscratch
 
 import android.app.Application
 import android.content.Context
-import com.android_academy.startfromscratch.solution_5.movies.di.modulesList
+import com.android_academy.startfromscratch.solution_5.di.modulesList
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

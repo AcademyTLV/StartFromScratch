@@ -1,4 +1,4 @@
-package com.android_academy.startfromscratch.solution_5.movies.ui.details
+package com.android_academy.startfromscratch.solution_5.ui.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

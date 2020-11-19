@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android_academy.startfromscratch.solution_1.MovieActivity
-import com.android_academy.startfromscratch.solution_5.movies.MainActivity
+import com.android_academy.startfromscratch.solution_5.MainActivity
 import kotlinx.android.synthetic.main.activity_start.*
 
 class StarterActivity : AppCompatActivity() {
@@ -78,7 +78,7 @@ class StarterActivity : AppCompatActivity() {
     }
 
     private fun startSolution5() {
-        startActivity(Intent(this, com.android_academy.startfromscratch.solution_5.movies.MainActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     private fun startSolution4() {

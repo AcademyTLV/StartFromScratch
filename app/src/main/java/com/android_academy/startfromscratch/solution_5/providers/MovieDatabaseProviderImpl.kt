@@ -1,4 +1,4 @@
-package com.android_academy.startfromscratch.solution_5.movies.providers
+package com.android_academy.startfromscratch.solution_5.providers
 
 import com.android_academy.db.MovieDao
 import com.android_academy.db.Movie

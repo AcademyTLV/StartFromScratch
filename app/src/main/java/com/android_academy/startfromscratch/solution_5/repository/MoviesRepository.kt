@@ -1,10 +1,10 @@
-package com.android_academy.startfromscratch.solution_5.movies.repository
+package com.android_academy.startfromscratch.solution_5.repository
 
 import android.util.Log
 import com.android_academy.db.Movie
 import com.android_academy.db.MovieModelConverter
-import com.android_academy.startfromscratch.solution_5.movies.providers.MovieDatabaseProvider
-import com.android_academy.startfromscratch.solution_5.movies.providers.MovieNetworkProvider
+import com.android_academy.startfromscratch.solution_5.providers.MovieDatabaseProvider
+import com.android_academy.startfromscratch.solution_5.providers.MovieNetworkProvider
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import kotlin.coroutines.coroutineContext

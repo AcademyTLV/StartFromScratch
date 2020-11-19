@@ -11,7 +11,7 @@ import kotlin.coroutines.coroutineContext
 
 interface MoviesRepository {
     suspend fun getMovies(callback: (List<Movie>?) -> Unit)
-    suspend fun getMovie(movieId : Int, callback: (Movie?) -> Unit)
+    fun getMovie(movieId : Int, callback: (Movie?) -> Unit)
     suspend fun getMoviesFromServerCoroutines()
     suspend fun getMoviesFromDataBase(callback: (List<Movie>?) -> Unit)
 }
@@ -29,11 +29,10 @@ class MoviesRepositoryImpl(
         }
     }
 
-    override suspend fun getMovie(movieId: Int, callback: (Movie?) -> Unit) {
-        withContext(coroutineContext + Dispatchers.IO) {
+    override fun getMovie(movieId: Int, callback: (Movie?) -> Unit) {
+        //TODO Add withContext Dispatchers.IO to ensure MainThreadSafety
             val movie = dbProvider.getMovie(movieId)
             callback.invoke(movie)
-        }
     }
 
     override suspend fun getMoviesFromServerCoroutines() {
@@ -41,10 +40,9 @@ class MoviesRepositoryImpl(
             CoroutineScope(coroutineContext).launch {
                 val movies = networkProvider.getMovies()
                 Log.d("[MoviesRepositoryImpl]", "getMoviesFromServerCoroutines(): $movies")
-                dbProvider.getAll()
+                //TODO Add deleteAll from database after you create it in MovieDatabaseProviderImpl and DAO
                 dbProvider.insertAll(MovieModelConverter.convertNetworkMovieToModel(movies))
-//                dao.deleteAll()
-//                    dao.insertAll(MovieModelConverter.convertNetworkMovieToModel(movies))
+
             }
         } catch (cause: Throwable) {
             Log.d("MoviesRepository", "On failure: ${cause.message}")

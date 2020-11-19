@@ -11,6 +11,7 @@ interface MovieDatabaseProvider {
     fun getAll(): Flow<List<Movie>?>
     suspend fun getMovie(movieId : Int): Movie?
     suspend fun insertAll(movies: List<Movie>)
+    suspend fun deleteAll()
 }
 
 class MovieDatabaseProviderImpl(private val dao: MovieDao) : MovieDatabaseProvider {
@@ -25,5 +26,9 @@ class MovieDatabaseProviderImpl(private val dao: MovieDao) : MovieDatabaseProvid
 
     override suspend fun insertAll(movies: List<Movie>) = withContext(Dispatchers.IO) {
         dao.insertAll(movies)
+    }
+
+    override suspend fun deleteAll() {
+        dao.deleteAll()
     }
 }

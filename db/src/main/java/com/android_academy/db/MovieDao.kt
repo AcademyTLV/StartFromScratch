@@ -18,6 +18,7 @@ interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(movies: Collection<Movie>)
+
     @Query("DELETE FROM Movie")
     suspend fun deleteAll()
 }

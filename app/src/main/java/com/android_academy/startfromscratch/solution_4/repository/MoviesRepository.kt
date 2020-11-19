@@ -41,10 +41,8 @@ class MoviesRepositoryImpl(
             CoroutineScope(coroutineContext).launch {
                 val movies = networkProvider.getMovies()
                 Log.d("[MoviesRepositoryImpl]", "getMoviesFromServerCoroutines(): $movies")
-                dbProvider.getAll()
+                dbProvider.deleteAll()
                 dbProvider.insertAll(MovieModelConverter.convertNetworkMovieToModel(movies))
-//                dao.deleteAll()
-//                    dao.insertAll(MovieModelConverter.convertNetworkMovieToModel(movies))
             }
         } catch (cause: Throwable) {
             Log.d("MoviesRepository", "On failure: ${cause.message}")

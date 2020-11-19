@@ -30,7 +30,7 @@ class DetailsViewModelImpl(private val moviesRepository: MoviesRepository) : Vie
             //TODO Call for getMovie(movieId) on Repository
             //TODO Update live data on new received movie
             //notice that now our data will come from DB and not from network.
-            //since our livedata story movie it will cached for next call (e.g. after activity recreation)
+            //since our LiveData story movie it will cached for next call (e.g. after activity recreation)
         }
     }
 }

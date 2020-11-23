@@ -36,6 +36,7 @@ class MoviesRepositoryImpl(
             executor.execute {
                 val movies = networkProvider.getMovies()
                 Log.d("[MoviesRepositoryImpl]", "getMoviesFromServerCoroutines(): $movies")
+                dbProvider.deleteAll()
                 dbProvider.insertAll(MovieModelConverter.convertNetworkMovieToModel(movies))
                 getMoviesFromDataBase(callback)
             }

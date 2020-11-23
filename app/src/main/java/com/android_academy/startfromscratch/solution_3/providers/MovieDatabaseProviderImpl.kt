@@ -9,6 +9,7 @@ interface MovieDatabaseProvider {
     fun getAll(): List<Movie>?
     fun getMovie(movieId : Int): Movie?
     fun insertAll(movies: List<Movie>)
+    fun deleteAll()
 }
 
 class MovieDatabaseProviderImpl(private val dao: MockMovieDao) : MovieDatabaseProvider {
@@ -23,5 +24,9 @@ class MovieDatabaseProviderImpl(private val dao: MockMovieDao) : MovieDatabasePr
 
     override fun insertAll(movies: List<Movie>) {
         dao.insertAll(movies)
+    }
+
+    override fun deleteAll() {
+        dao.deleteAll()
     }
 }

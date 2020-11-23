@@ -32,11 +32,12 @@ class MoviesRepositoryImpl(
         }
     }
 
-    fun getMoviesFromServer(callback: (List<Movie>?) -> Unit) {
+    private fun getMoviesFromServer(callback: (List<Movie>?) -> Unit) {
         try {
             executor.execute {
                 val movies = networkProvider.getMovies()
                 Log.d("[MoviesRepositoryImpl]", "getMoviesFromServerCoroutines(): $movies")
+                dbProvider.deleteAll()
                 dbProvider.insertAll(MovieModelConverter.convertNetworkMovieToModel(movies))
                 getMoviesFromDataBase(callback)
             }
@@ -45,7 +46,7 @@ class MoviesRepositoryImpl(
         }
     }
 
-    fun getMoviesFromDataBase(callback: (List<Movie>?) -> Unit) {
+    private fun getMoviesFromDataBase(callback: (List<Movie>?) -> Unit) {
         executor.execute {
             callback(dbProvider.getAll())
         }

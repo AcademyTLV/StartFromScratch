@@ -10,8 +10,6 @@ import java.util.concurrent.ThreadPoolExecutor
 interface MoviesRepository {
     fun getMovies(callback: (List<Movie>?) -> Unit)
     fun getMovie(movieId: Int, callback: (Movie?) -> Unit)
-    fun getMoviesFromServerCoroutines(callback: (List<Movie>?) -> Unit)
-    fun getMoviesFromDataBase(callback: (List<Movie>?) -> Unit)
 }
 
 
@@ -23,7 +21,7 @@ class MoviesRepositoryImpl(
 
     override fun getMovies(callback: (List<Movie>?) -> Unit) {
         getMoviesFromDataBase(callback)
-        getMoviesFromServerCoroutines(callback)
+        getMoviesFromServer(callback)
     }
 
     override fun getMovie(movieId: Int, callback: (Movie?) -> Unit) {
@@ -33,7 +31,7 @@ class MoviesRepositoryImpl(
         }
     }
 
-    override fun getMoviesFromServerCoroutines(callback: (List<Movie>?) -> Unit) {
+    private fun getMoviesFromServer(callback: (List<Movie>?) -> Unit) {
         try {
             executor.execute {
                 val movies = networkProvider.getMovies()
@@ -46,7 +44,7 @@ class MoviesRepositoryImpl(
         }
     }
 
-    override fun getMoviesFromDataBase(callback: (List<Movie>?) -> Unit) {
+    private fun getMoviesFromDataBase(callback: (List<Movie>?) -> Unit) {
         executor.execute {
             callback(dbProvider.getAll())
         }
